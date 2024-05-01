@@ -28,7 +28,12 @@
         <link rel="stylesheet" href="#" id="rtl-style-link">
         <link rel="stylesheet" href="{{ url('') }}/assets/css/style.css" id="main-style-link">
         <!-- Scripts -->
-
+<style>
+  .app-sidebar .brand-link {
+    padding: 0px 70px !important;
+    display: block;
+}
+</style>
         <!-- Styles -->
         @livewireStyles
     </head>

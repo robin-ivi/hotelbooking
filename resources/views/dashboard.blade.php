@@ -40,7 +40,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="numbers flex-grow-1 pe-3">
                                             <p class="fw-600 mb-1 text-muted">Total Booking</p>
-                                            <h4 class="fw-700 mb-0 text-dark-black">2</h4>
+                                            <h4 class="fw-700 mb-0 text-dark-black">{{ count($booked)}}</h4>
                                         </div>
                                         <div class="icon-shape bg-success ">
                                             <i class="ti ti-users"></i>
@@ -55,7 +55,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="numbers flex-grow-1 pe-3">
                                             <p class="fw-600 mb-1 text-muted">Total Check Out</p>
-                                            <h4 class="fw-700 mb-0 text-dark-black">4</h4>
+                                            <h4 class="fw-700 mb-0 text-dark-black">{{ count($checkout)}}</h4>
                                         </div>
                                         <div class="icon-shape bg-danger ">
                                             <i class="ti ti-users"></i>

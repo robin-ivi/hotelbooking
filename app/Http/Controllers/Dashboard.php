@@ -12,6 +12,8 @@ class Dashboard extends Controller
         $data = Room::where('room_status','checkout')->get();
         $bdata = Room::where('room_status','booked')->get();
         $bookiing = Booking::orderBy('updated_at', 'desc')->limit('10')->get();
-	    return view('dashboard', compact('data','bdata','bookiing'));
+        $booked = Booking::where('status','booked')->get();
+        $checkout = Booking::where('status','checkout')->get();
+	    return view('dashboard', compact('data','bdata','bookiing','booked','checkout'));
 	}
 }

@@ -4,7 +4,7 @@
       <div class="brand-link brand-logo">
         <a href="/dashboard" class="b-brand">
           <!-- ========   change your logo hear   ============ -->
-          <img src="{{ url('') }}/assets/images/logo-dark.svg"  alt="" class="logo logo-lg"/>
+          <img src="https://thekrishnayan.cremeclients.com/wp-content/uploads/2024/03/Frame-155.png"  alt="" class="logo logo-lg"/>
         </a>
       </div>
       <div class="navbar-content">
