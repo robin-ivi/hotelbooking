@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                            <label class="form-label" for="travel_type">Room Floor</label><br>
+                                            <label class="form-label" for="travel_type">Travel Type</label><br>
                                             <div class="form-check-inline">
                                                 <input class="form-check-input" type="radio" name="travel_type" value="Business" id="Business">
                                                 <label class="form-check-label" for="Business">

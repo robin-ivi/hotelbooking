@@ -34,3 +34,5 @@ Route::get('categories/{id}/rooms', [BookingController::class, 'getRooms']);
 Route::post('store-booking', [BookingController::class, 'store'])->name('store-booking');
 Route::get('booking-list', [BookingController::class, 'list']);
 Route::get('delete-booking/{id}', [BookingController::class, 'destroy'])->name('destroy-booking');
+Route::get('view-booking/{id}', [BookingController::class, 'view'])->name('view-booking');
+Route::post('update-booking', [BookingController::class, 'update'])->name('update-booking');

@@ -80,4 +80,46 @@ class BookingController extends Controller
         $data = Booking::where('id', $id)->delete();
         return redirect()->back()->with('success', 'Booking deleted successfully.');
     }
+
+    public function view($id)
+    {
+        $data = Booking::where('id', $id)->get();
+        return view('booking.booking-view', compact('data'));
+    }
+
+    public function update(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone_no' => 'required',
+            'addvanced_amount' => 'required',
+            'amount' => 'required',
+            'check_out' => 'required',
+            'status' => 'required',
+        ]);
+
+        $booking = Booking::find($request->input('id'));
+        $booking->name = $request->input('name');
+        $booking->status = $request->input('status');
+        $booking->email = $request->input('email');
+        $booking->phone_no = $request->input('phone_no');
+        $booking->addvanced_amount = $request->input('addvanced_amount');
+        $booking->amount = $request->input('amount');
+        $booking->check_out = $request->input('check_out');
+        $booking->status = $request->input('status');
+        
+        $booking->save();
+
+        
+// Array of room names to update
+$roomNames = $request->input('room');
+
+// Update rooms with the specified names to "booked"
+Room::whereIn('room_name', $roomNames)->update(['room_status' => 'bookcxzcxcxced']);
+        
+        
+    
+        return redirect()->back()->with('success', 'Booking Update successfully.');
+    }
 }
