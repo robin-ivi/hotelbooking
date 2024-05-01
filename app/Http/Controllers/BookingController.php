@@ -71,7 +71,7 @@ class BookingController extends Controller
 
     public function list()
     {
-        $data = Booking::all();
+        $data = Booking::orderBy('id', 'DESC')->get();
         return view('booking.booking-list', compact('data'));
     }
 
@@ -122,4 +122,20 @@ Room::whereIn('room_name', $roomNames)->update(['room_status' => 'bookcxzcxcxced
     
         return redirect()->back()->with('success', 'Booking Update successfully.');
     }
+
+
+    
+
+public function inoicelist()
+{
+    $data = Booking::where('status','checkout')->orderBy('id', 'DESC')->get();
+    return view('booking.invoice-list', compact('data'));
+}
+
+public function invoiceview($id)
+{
+    $data = Booking::where('id', $id)->get();
+    return view('booking.invoice', compact('data'));
+}
+
 }

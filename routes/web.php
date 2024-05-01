@@ -36,3 +36,5 @@ Route::get('booking-list', [BookingController::class, 'list']);
 Route::get('delete-booking/{id}', [BookingController::class, 'destroy'])->name('destroy-booking');
 Route::get('view-booking/{id}', [BookingController::class, 'view'])->name('view-booking');
 Route::post('update-booking', [BookingController::class, 'update'])->name('update-booking');
+Route::get('inoice-list', [BookingController::class, 'inoicelist']);
+Route::get('view-invoice/{id}', [BookingController::class, 'invoiceview'])->name('view-invoice');

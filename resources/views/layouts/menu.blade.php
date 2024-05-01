@@ -42,6 +42,10 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item nav-hasmenu">
+            <a href="{{ url('inoice-list') }}" class="nav-link"><span class="nav-icon"><i class="ti ti-receipt"></i></span><span
+                class="nav-text">Inoive</span></a>
+          </li>
         </ul>
       </div>
     </div>
