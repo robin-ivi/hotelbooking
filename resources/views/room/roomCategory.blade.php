@@ -10,7 +10,6 @@
     <div class="content-container">
         <div class="page-content">
             <div class="content-header">
-                <h1 class="mb-0">Room Category</h1>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -31,10 +30,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="input-group">
-                                    <input type="text" name="category_name" class="form-control" placeholder="Room Category ...">
+                                    <input type="text" name="category_name" class="form-control @error('category_name') is-invalid @enderror" placeholder="Room Category ...">
                                     <input type="hidden" name="status" value="active">
-                                </div>
+                                    @error('category_name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                             </div>
                         </div>
                         <div class="card-footer">
@@ -47,7 +47,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Input Group Options</h4>
+                            <h4>All Room Category List</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

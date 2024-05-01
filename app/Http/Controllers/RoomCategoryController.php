@@ -16,6 +16,9 @@ class RoomCategoryController extends Controller
 	 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'category_name' => 'required|unique:room_categories',
+        ]);
         roomCategory::create($request->all());
         return redirect('roomCategory-list')->with('success', 'Category created successfully.');
     }

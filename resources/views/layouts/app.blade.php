@@ -19,7 +19,11 @@
         <link rel="stylesheet" href="{{ url('') }}/assets/fonts/feather.css">
         <link rel="stylesheet" href="{{ url('') }}/assets/fonts/fontawesome.css">
         <link rel="stylesheet" href="{{ url('') }}/assets/fonts/material.css">
-
+        <link rel="stylesheet" href="{{ url('') }}/assets/css/plugins/select2.min.css">
+        <link rel="stylesheet" href="{{ url('') }}/assets/css/plugins/select2-bootstrap-5-theme.min.css">
+        <link rel="stylesheet" href="{{ url('') }}/assets/css/plugins/flatpickr.min.css">
+        <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" />
         <!-- vendor css -->
         <link rel="stylesheet" href="#" id="rtl-style-link">
         <link rel="stylesheet" href="{{ url('') }}/assets/css/style.css" id="main-style-link">
@@ -54,6 +58,17 @@
 <script src="{{ url('') }}/assets/js/plugins/feather.min.js"></script>
 <script src="{{ url('') }}/assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ url('') }}/assets/js/plugins/select2.min.js"></script>
+<script src="{{ url('') }}/assets/js/plugins/flatpickr.min.js"></script>
+<script src="{{ url('') }}/assets/js/pages/ad-datepicker.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
 
 <div class="theme-roller">
   <div class="open-button">

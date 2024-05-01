@@ -26,10 +26,19 @@
                 <a class="nav-link" href="{{ url('roomCategory-list')}}">Add Room Category</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/calendar.html">Calendar</a>
+                <a class="nav-link" href="{{ url('rooms')}}">Room</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-hasmenu">
+            <a href="#!" class="nav-link"><span class="nav-icon"><i class="ti ti-user"></i></span><span
+                class="nav-text">Booking</span><span class="nav-arrow"><i data-feather="chevron-right"></i></span></a>
+            <ul class="nav-submenu">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('booking')}}">Add New Booking</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/analytics.html">Analytics</a>
+                <a class="nav-link" href="{{ url('booking-list') }}">Booking List</a>
               </li>
             </ul>
           </li>
