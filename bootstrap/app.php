@@ -13,6 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->validateCsrfTokens(except: [
+            'categories/rooms'
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

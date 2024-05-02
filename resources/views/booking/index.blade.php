@@ -357,11 +357,13 @@
     $(document).ready(function(){
     $('#type_of_room-select').on('change', function(){
         var categoryId = $(this).val();
+        console.log(categoryId);
         if(categoryId){
             $.ajax({
-                url: '/categories/'+categoryId+'/rooms',
-                type: 'GET',
+                url: '/categories/rooms',
+                type: 'POST',
                 dataType: 'json',
+                data : {categoryId},
                 success: function(data){
                     $('#room-select').empty();
                     $.each(data, function(key, value){

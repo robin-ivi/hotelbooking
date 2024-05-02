@@ -30,7 +30,7 @@ Route::get('delete-rooms/{id}', [RoomController::class, 'destroy'])->name('destr
 
 
 Route::get('booking', [BookingController::class, 'index']);
-Route::get('categories/{id}/rooms', [BookingController::class, 'getRooms']);
+Route::post('categories/rooms', [BookingController::class, 'getRooms']);
 Route::post('store-booking', [BookingController::class, 'store'])->name('store-booking');
 Route::get('booking-list', [BookingController::class, 'list']);
 Route::get('delete-booking/{id}', [BookingController::class, 'destroy'])->name('destroy-booking');

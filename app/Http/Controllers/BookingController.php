@@ -18,9 +18,10 @@ class BookingController extends Controller
 	    return view('booking.index',compact('rcountery'),compact('roomCategory'),compact('room'));
 	}
 
-    public function getRooms($id)
+    public function getRooms(Request $request)
     {
-        $rooms = Room::where('room_category', $id)->where('room_status','checkout')->get();
+        $cat = $request->categoryId;
+        $rooms = Room::whereIn('room_category', $cat)->where('room_status','checkout')->get();
         return response()->json($rooms);
     }
 
@@ -110,14 +111,13 @@ class BookingController extends Controller
         $booking->status = $request->input('status');
         
         $booking->save();
-
         
-// Array of room names to update
-$roomNames = $request->input('room');
-
-// Update rooms with the specified names to "booked"
-Room::whereIn('room_name', $roomNames)->update(['room_status' => 'bookcxzcxcxced']);
-        
+        // Array of room names to update
+        $roomNames = $request->input('room');
+        // dd(json_decode($roomNames[0]));
+        // Update rooms with the specified names to "booked"
+        Room::whereIn('room_name', json_decode($roomNames[0]))->update(['room_status' => $request->input('status')]);
+                
         
     
         return redirect()->back()->with('success', 'Booking Update successfully.');

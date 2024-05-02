@@ -244,7 +244,7 @@
                                             <div class="form-group">
                                                     <label class="form-label" for="check_out">Check Out Date</label>
                                                     <input type="text" name="check_out" id="" class="form-control datepicker flatpickr-input  @error('check_out') is-invalid @enderror" value="{{ $item->check_out }}">
-                                                    <input type="text" name="room[]" value="{{ $item->room }}">
+                                                    <input type="hidden" name="room[]" value="{{ $item->room }}">
                                                     <input type="hidden" name="id" value="{{ $item->id }}">
                                                     @error('check_out')
                                                         <div class="alert alert-danger">{{ $message }}</div>
