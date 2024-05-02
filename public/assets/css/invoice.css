@@ -1203,6 +1203,10 @@ hr {
   margin-right: 20px;
 }
 .tm_invoice.tm_style1 .tm_logo img {
+  background: #007aff;
+    box-shadow: beige;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    border-radius: 5px;
   max-height: 50px;
 }
 .tm_invoice.tm_style1 .tm_logo.tm_size1 img {
@@ -1292,6 +1296,10 @@ hr {
           flex: none;
 }
 .tm_invoice.tm_style2 .tm_logo img {
+  background: #007aff;
+    box-shadow: beige;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    border-radius: 5px;
   max-height: 60px;
 }
 .tm_invoice.tm_style2 .tm_invoice_title {

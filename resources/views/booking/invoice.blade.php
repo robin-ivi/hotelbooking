@@ -153,12 +153,12 @@
                       <td class="tm_width_3 tm_primary_color tm_text_right tm_border_none tm_bold">₹{{ $item->amount }}</td>
                     </tr>
                     <tr>
-                      <td class="tm_width_3 tm_primary_color tm_border_none tm_pt0">Tax <span class="tm_ternary_color">(5%)</span></td>
-                      <td class="tm_width_3 tm_primary_color tm_text_right tm_border_none tm_pt0">+₹{{$gst_amount}}</td>
+                      <td class="tm_width_6 tm_primary_color tm_border_none tm_pt0">Tax <span class="tm_ternary_color">CGST(6%) + IGST(6%)</span></td>
+                      <td class="tm_width_2 tm_primary_color tm_text_right tm_border_none tm_pt0">+₹{{$gst_amount}}</td>
                     </tr>
                     <tr class="tm_border_top">
-                      <td class="tm_width_3 tm_border_top_0 tm_bold tm_f16 tm_primary_color">Grand Total	</td>
-                      <td class="tm_width_3 tm_border_top_0 tm_bold tm_f16 tm_primary_color tm_text_right">₹ {{$total_price}} /-</td>
+                      <td class="tm_width_2 tm_border_top_0 tm_bold tm_f16 tm_primary_color">Grand Total	</td>
+                      <td class="tm_width_4 tm_border_top_0 tm_bold tm_f16 tm_primary_color tm_text_right">₹ {{$total_price}} /-</td>
                     </tr>
                   </tbody>
                 </table>
