@@ -47,6 +47,9 @@ class BookingController extends Controller
         $booking->booked_via = $request->input('booked_via');
         $booking->billing_instr = $request->input('billing_instr');
         $booking->payment_mode = $request->input('payment_mode');
+        $booking->add_gst = $request->input('add_gst');
+        $booking->add_foodgst = $request->input('add_foodgst');
+        $booking->food_amount = $request->input('food_amount');
         $booking->country = $request->input('country');
         $booking->type_of_room = json_encode($request->input('type_of_room')); // Store as JSON string
         $booking->room = json_encode($request->input('room')); // Store as JSON string
@@ -107,6 +110,9 @@ class BookingController extends Controller
         $booking->phone_no = $request->input('phone_no');
         $booking->addvanced_amount = $request->input('addvanced_amount');
         $booking->amount = $request->input('amount');
+        $booking->add_gst = $request->input('add_gst');
+        $booking->add_foodgst = $request->input('add_foodgst');
+        $booking->food_amount = $request->input('food_amount');
         $booking->check_out = $request->input('check_out');
         $booking->status = $request->input('status');
         

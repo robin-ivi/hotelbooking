@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('booked_via')->nullable();
             $table->string('billing_instr')->nullable();
             $table->string('payment_mode')->nullable();
+            $table->string('add_gst')->nullable();
+            $table->string('add_foodgst')->nullable();
+            $table->string('food_amount')->nullable();
             $table->string('type_of_room')->nullable();
             $table->string('room')->nullable();
             $table->string('room_category')->nullable();

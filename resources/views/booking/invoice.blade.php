@@ -81,7 +81,8 @@
                 <table>
                   <thead>
                     <tr>
-                      <th class="tm_width_2 tm_medium tm_white_color tm_accent_bg">Room</th>
+                      <th class="tm_width_3 tm_medium tm_white_color tm_accent_bg">Room</th>
+                      <th class="tm_width_1 tm_medium tm_white_color tm_accent_bg">Food</th>
                       <th class="tm_width_2 tm_medium tm_white_color tm_accent_bg">No of Day</th>
                       <th class="tm_width_2 tm_medium tm_white_color tm_accent_bg">Check In</th>
                       <th class="tm_width_2 tm_medium tm_white_color tm_accent_bg">Check Out</th>
@@ -105,6 +106,7 @@
                             echo "No rooms found.";
                         }
                         ?></td>
+                      <td class="tm_width_2">@if($item->food_amount == "") N/A @else₹ {{ $item->food_amount }} /- @endif</td>
                       <td class="tm_width_2">
                         <?php
 
@@ -131,34 +133,70 @@
               </div>
             </div>
             @php
-                $price_before_gst = $item->amount; // You can replace this with your actual price
-
-                // Calculate the GST amount
-                $gst_percent = 12; // GST percentage
-                $gst_amount = ($price_before_gst * $gst_percent) / 100;
-
-                // Calculate the total price including GST
-                $total_price = $price_before_gst + $gst_amount;
-            @endphp 
+            // GST percentage and calculation for $item->amount
+            $gst_percent = 12; // GST percentage for $item->amount
+            $gst_amount = ($item->amount * $gst_percent) / 100;
+            $total_price = $item->amount + $gst_amount;
+        
+            // GST percentage and calculation for $item->food_amount
+            $gst_percent1 = 5; // GST percentage for $item->food_amount
+            $gst_amount1 = ($item->food_amount * $gst_percent1) / 100;
+            $total_price1 = $item->food_amount + $gst_amount1;
+        
+            // Grand Total Calculation
+            $grand_total = ($item->add_gst == 'on') ? $total_price + $total_price1 : $item->amount + $item->food_amount;
+        @endphp
             <div class="tm_invoice_footer">
               <div class="tm_left_footer">
-                <p class="tm_mb2"><b class="tm_primary_color">Payment info:</b></p>
-                <p class="tm_m0">Credit Card - 236***********928 <br>Amount: ₹ {{$total_price}} /-</p>
+                {{-- <p class="tm_mb2"><b class="tm_primary_color">Payment info:</b></p>
+                <p class="tm_m0">Credit Card - 236***********928 <br>Amount:  
+                  @if($item->add_gst == 'on')
+                  ₹ {{$total_price}} /-
+                @else
+                ₹ {{ $item->amount }} /-
+                @endif</p> --}}
               </div>
               <div class="tm_right_footer">
                 <table>
                   <tbody>
                     <tr>
                       <td class="tm_width_3 tm_primary_color tm_border_none tm_bold">Subtoal</td>
-                      <td class="tm_width_3 tm_primary_color tm_text_right tm_border_none tm_bold">₹{{ $item->amount }}</td>
+                      <td class="tm_width_3 tm_primary_color tm_text_right tm_border_none tm_bold">₹{{ $item->amount +  $item->food_amount }}</td>
                     </tr>
+                    @if($item->add_foodgst == 'on')
+                    <tr>
+                      <td class="tm_width_6 tm_primary_color tm_border_none tm_pt0">Tax <span class="tm_ternary_color">5%</span></td>
+                      <td class="tm_width_2 tm_primary_color tm_text_right tm_border_none tm_pt0">+₹{{$gst_amount1}}</td>
+                    </tr>
+                    @endif
+                    @if($item->add_gst == 'on')
                     <tr>
                       <td class="tm_width_6 tm_primary_color tm_border_none tm_pt0">Tax <span class="tm_ternary_color">CGST(6%) + IGST(6%)</span></td>
                       <td class="tm_width_2 tm_primary_color tm_text_right tm_border_none tm_pt0">+₹{{$gst_amount}}</td>
                     </tr>
+                    @endif
                     <tr class="tm_border_top">
                       <td class="tm_width_2 tm_border_top_0 tm_bold tm_f16 tm_primary_color">Grand Total	</td>
-                      <td class="tm_width_4 tm_border_top_0 tm_bold tm_f16 tm_primary_color tm_text_right">₹ {{$total_price}} /-</td>
+                      <td class="tm_width_4 tm_border_top_0 tm_bold tm_f16 tm_primary_color tm_text_right">₹ 
+                        @php
+                        // Initialize total price
+                        $total_price = $item->amount + $item->food_amount;
+                    
+                        // Check if GST needs to be added for both items
+                        if ($item->add_gst == 'on' && $item->add_foodgst == 'on') {
+                            $total_price += $gst_amount + $gst_amount1;
+                        }
+                        // Check if only GST for $item->amount needs to be added
+                        elseif ($item->add_gst == 'on' && $item->add_foodgst == null) {
+                            $total_price += $gst_amount;
+                        }
+                        // Check if only GST for $item->food_amount needs to be added
+                        elseif ($item->add_gst == null && $item->add_foodgst == 'on') {
+                            $total_price += $gst_amount1;
+                        }
+                    @endphp
+                    {{ $total_price }}
+                  </td>
                     </tr>
                   </tbody>
                 </table>

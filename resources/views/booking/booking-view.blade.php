@@ -233,9 +233,36 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                    <label class="form-label" for="amount">Amount</label>
+                                                    <label class="form-label" for="amount">Total Amount</label>
                                                     <input type="text" name="amount" id="" placeholder="Enter Amount" class="form-control  @error('amount') is-invalid @enderror" value="{{ $item->amount }}">
                                                     @error('amount')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                    <label class="form-label" for="food_amount">Food Amount</label>
+                                                    <input type="text" name="food_amount" id="" placeholder="Enter Food Amount" class="form-control  @error('food_amount') is-invalid @enderror" value="{{ $item->food_amount }}">
+                                                    @error('food_amount')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                    <label class="form-label" for="add_foodgst">Add Food GST (5%)</label><br>
+                                                    <input class="form-check-input @error('add_foodgst') is-invalid @enderror" type="checkbox" name="add_foodgst"  @if($item->add_foodgst) checked @endif>
+                                                    @error('add_foodgst')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                    <label class="form-label" for="add_gst">Add GST (6% CGST / 6% IGST )</label><br>
+                                                    <input class="form-check-input @error('add_gst') is-invalid @enderror" type="checkbox" name="add_gst" @if($item->add_gst) checked @endif>
+                                                    @error('add_gst')
                                                         <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
                                             </div>

@@ -13,7 +13,7 @@
           
           <li class="nav-item nav-hasmenu">
             <a href="/dashboard" class="nav-link"><span class="nav-icon"><i class="ti ti-layout-2"></i></span><span
-                class="nav-text">Dashboard</span><span class="nav-arrow"><i data-feather="chevron-right"></i></span></a>
+                class="nav-text">Dashboard</span></a>
           </li>
           <li class="nav-item nav-caption">
             <label>PAGES</label>

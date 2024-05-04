@@ -17,12 +17,12 @@
             <div class="auth-content">
                 <div class="authentication-inner row m-0">
                     <div class="d-none d-lg-block col-lg-7 col-xl-8 p-0 img-side">
-                        <img class="img-fluid" width="100%" src="../assets/images/auth/using-laptop-gray-wall.jpg" alt="happy young woman sitting on the floor using laptop on gray wall">
+                        <img class="img-fluid" width="100%" src="../assets/images/auth/The-Krishnayan.png" alt="happy young woman sitting on the floor using laptop on gray wall">
                     </div>
                     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4">
                         <div class="w-px-400 mx-auto">
-                            <h4 class="mb-2">Welcome to Wedash!</h4>
-                            <p class="mb-4">Please sign-in to your account and start the adventure</p>
+                            <h4 class="mb-2">Welcome to The Krishnayan</h4>
+                            <p class="mb-4">Please sign-in to your account and start the booking</p>
                             <div class="row justify-content-center">
                                 <div class="col-lg-12">
                                     <div class="form-group mb-3">
